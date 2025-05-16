@@ -1,13 +1,20 @@
 package br.com.jeferson;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        ExchangeApiClient client = new ExchangeApiClient();
+        Scanner sc = new Scanner(System.in);
+        double amount = sc.nextDouble();
 
-        System.out.println(client.getBody("BRL","USD"));
+        ExchangeApiClient client = new ExchangeApiClient();
+        JsonParser parser = new JsonParser();
+
+        ExchangeApiService service = new ExchangeApiService(client, parser);
+        Currency currency = service.exchangeApiConverter("USD","BRL",amount);
+
 
     }
 }
