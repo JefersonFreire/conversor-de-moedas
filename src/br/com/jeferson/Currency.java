@@ -1,6 +1,5 @@
 package br.com.jeferson;
 
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 
 public class Currency {
@@ -11,8 +10,10 @@ public class Currency {
     private String targetCurrency;
     @SerializedName("conversion_rate")
     private double conversionRate;
-    @SerializedName("conversion_result")
-    private double conversionResult;
+
+    public double converterAmount(double amount) {
+        return this.conversionRate * amount;
+    }
 
     public String getBaseCurrency() {
         return baseCurrency;
@@ -24,19 +25,5 @@ public class Currency {
 
     public double getConversionRate() {
         return conversionRate;
-    }
-
-    public double getConversionResult() {
-        return conversionResult;
-    }
-
-    @Override
-    public String toString() {
-        return "Currency{" +
-                "baseCurrency='" + baseCurrency + '\'' +
-                ", targetCurrency='" + targetCurrency + '\'' +
-                ", conversionRate=" + conversionRate +
-                ", conversionResult=" + conversionResult +
-                '}';
     }
 }
