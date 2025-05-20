@@ -62,10 +62,10 @@ public class Main {
         }
 
     }
+    static ExchangeApiClient client = new ExchangeApiClient();
+    static CurrencyJsonParser parser = new CurrencyJsonParser();
+    static ExchangeApiService service = new ExchangeApiService(client, parser);
     public static Currency apiConverter(String base, String target, double amount) throws IOException, InterruptedException {
-        ExchangeApiClient client = new ExchangeApiClient();
-        CurrencyJsonParser parser = new CurrencyJsonParser();
-        ExchangeApiService service = new ExchangeApiService(client, parser);
 
         try {
             Currency currency = service.convertCurrency(base, target, amount);
