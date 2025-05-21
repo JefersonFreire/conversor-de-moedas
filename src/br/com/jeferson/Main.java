@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         int options = 0;
@@ -58,11 +58,13 @@ public class Main {
                     options = 7;
                     System.out.println("Saindo...");
                     break;
+                default:
+                    System.out.println("Insira uma opção válida!");
             }
         }
 
     }
-    public static Currency apiConverter(String base, String target, double amount) throws IOException, InterruptedException {
+    public static Currency apiConverter(String base, String target, double amount) {
         ExchangeApiClient client = new ExchangeApiClient();
         CurrencyJsonParser parser = new CurrencyJsonParser();
         ExchangeApiService service = new ExchangeApiService(client, parser);
@@ -82,7 +84,7 @@ public class Main {
         return null;
     }
 
-    public static double inAmount(Scanner in){
+    public static double inAmount(Scanner in) {
         while(true) {
             System.out.print("""
                     ------------------------------------------------------------
