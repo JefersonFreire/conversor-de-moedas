@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         int options = 0;
@@ -67,7 +67,7 @@ public class Main {
     static ExchangeApiClient client = new ExchangeApiClient();
     static CurrencyJsonParser parser = new CurrencyJsonParser();
     static ExchangeApiService service = new ExchangeApiService(client, parser);
-    public static Currency apiConverter(String base, String target, double amount) throws IOException, InterruptedException {
+    public static Currency apiConverter(String base, String target, double amount) {
 
         try {
             Currency currency = service.convertCurrency(base, target, amount);
