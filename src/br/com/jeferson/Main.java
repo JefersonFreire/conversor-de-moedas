@@ -58,6 +58,8 @@ public class Main {
                     options = 7;
                     System.out.println("Saindo...");
                     break;
+                default:
+                    System.out.println("Insira uma opção válida!");
             }
         }
 

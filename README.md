@@ -77,12 +77,13 @@ Você será solicitado a digitar o valor desejado para conversão. O resultado s
 ## 📂 Estrutura do Projeto
 
 ```
-br.com.jeferson/
-├── Main.java                  # Classe principal com interface de menu
-├── Currency.java              # Modelo da resposta da API
-├── CurrencyJsonParser.java   # Conversor JSON -> Objeto Java
-├── ExchangeApiClient.java    # Requisições HTTP à API
-├── ExchangeApiService.java   # Camada de serviço para conversão
+src/
+└── br/com/jeferson/
+    ├── Currency.java              # Modelo de dados para os valores da API
+    ├── CurrencyJsonParser.java    # Faz o parsing do JSON para o objeto Currency
+    ├── ExchangeApiClient.java     # Responsável por fazer a chamada HTTP à API
+    ├── ExchangeApiService.java    # Camada de serviço que organiza a conversão
+    └── Main.java                  # Interface com o usuário (console)
 ```
 
 ---
